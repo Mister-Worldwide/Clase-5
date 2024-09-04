@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>👴🏻👴🏼👴🏽👴🏾👴🏿 jQuery</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <p>
+                <a href="index.html" class="activo">Hola</a>
+                <a href="page-1.html">Selecciona</a>
+                <a href="page-2.html">Foto</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+            <p id="alla" class="escondido"></p>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            var texto = {
+                saludo: ["'Sup my man!!", "Qué pasa bret!!"],
+                nombre: "Mi nombre es Vicente Robaldo",
+                motivo: "Tomé este curso porque siempre he querido acercarme a la programación, sin embargo mis intentos anteriores han terminado en fracaso. Es algo que encuentro muy útil e interesante y por esta misma razón no he querido rendirme con aprender sobre esta materia, por lo cual, tras escuchar recomendaciones de distintos compañeros, me decidí a tomar <span> este curso...</span>",
+                etc: "Al ver los resultados de la primera evaluación, me siento sumamente sorprendido y satisfecho, pues mis expectativas eran bastante bajas. Me entusiasma mucho saber que pude cumplir con una parte importante de los requerimientos para pasar dicha evaluación y espero que esta sea la línea base sobre la cual seguir aprendiendo",
+            };
+            var aleatorio = Math.floor(Math.random() * texto.saludo.length);
+            console.log(aleatorio);
+            $("h1").html(texto.saludo[aleatorio]);
+            $("h2").html(texto.nombre);
+            $("#aqui").html(texto.motivo);
+            $("#alla").html(texto.etc);
+            function revelador() {
+                $("#alla").toggleClass("escondido");
+            }
+            $("span").hover(revelador);
+        </script>
+    </body>
+</html>
